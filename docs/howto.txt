@@ -1,34 +1,3 @@
-* https://bulma.io/
-* https://codepen.io/wikiki/pen/OjdNKM
-
-* https://vuejs.org/
-* https://vuex.vuejs.org/
-* https://cli.vuejs.org/
-* https://codesandbox.io/s/o29j95wx9
-
-# WINDOWS
-$ node --version
-v14.15.3
-$ npm --version
-6.14.9
-
-npm i -g @vue/cli
-npm i -g @vue/cli-service-global
-
-$ vue --version
-@vue/cli 4.5.10
-
-mmkdir athasha
-cd athasha
-vue create .
-#vue2, babel, eslint
-npm run serve
-#http://localhost:8081/
-vue ui
-#http://localhost:8001/
-
-https://github.com/vuejs/vetur
-vue add vuex
 
 # Research
 
@@ -115,19 +84,7 @@ https://www.sketchingwithcss.com/samplechapter/cheatsheet.html#column
 https://css-tricks.com/snippets/css/complete-guide-grid/
 https://medium.com/front-end-weekly/how-to-use-fon-awesome-5-on-vuejs-project-ff0f28310821
 
-# from dev tools repl
-__VUE_DEVTOOLS_GLOBAL_HOOK__.store.commit
-__VUE_DEVTOOLS_GLOBAL_HOOK__.store.dispatch
-__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.data
-__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.data.name
-__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.data.items
-__VUE_DEVTOOLS_GLOBAL_HOOK__.store.commit('data/setName', {name: "Name1"})
-__VUE_DEVTOOLS_GLOBAL_HOOK__.store.dispatch('data/setName', {name: "Name2"})
-__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.view.selected
-__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.view.filter
-# module getters collapse to root store
-__VUE_DEVTOOLS_GLOBAL_HOOK__.store.getters["data/itemByIndex"]
-__VUE_DEVTOOLS_GLOBAL_HOOK__.store.getters["data/itemByIndex"](0)
+
 # mutations
 (state, args)
 # actions

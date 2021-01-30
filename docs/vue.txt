@@ -1,0 +1,37 @@
+* https://vuejs.org/
+* https://vuex.vuejs.org/
+* https://cli.vuejs.org/
+* https://github.com/vuejs/vetur
+* https://github.com/vuejs/vue-devtools
+
+# MACOS
+$ node --version
+v15.4.0
+$ npm --version
+7.0.15
+
+npm i -g @vue/cli
+npm i -g @vue/cli-service-global
+
+$ vue --version
+@vue/cli 4.5.10
+
+mkdir athasha
+cd athasha
+vue create .
+#vue2, babel, eslint
+
+vue add vuex
+
+npm run serve
+#http://localhost:8081/
+
+vue ui
+#http://localhost:8001/
+
+# from dev tools repl
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.ModuleName
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.ModuleName.Property
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.commit("ModuleName/MutationName", Args)
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.dispatch("ModuleName/ActionName", Args)
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.getters["ModuleName/GetterName"]

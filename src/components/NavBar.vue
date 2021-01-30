@@ -1,27 +1,65 @@
 <template>
   <nav class="bd-navbar navbar has-shadow is-spaced">
-    <NavBrand />
-    <div id="navbarBurger" class="navbar-menu">
-      <div class="navbar-end">
-        <NavUser v-if="user" />
+    <div class="navbar-brand">
+      <a v-once class="navbar-item" href="/" title="Athasha Automation">
+        <img src="@/assets/logo28.png" height="28" />
+      </a>
+      <div
+        v-if="userMenu"
+        class="navbar-burger navbar-item is-hidden-desktop"
+        @click="burgerActive = !burgerActive"
+      >
+        <img class="circle" :src="user.avatar" :title="user.name" />
+      </div>
+    </div>
+    <div class="navbar-menu" :class="{ 'is-active': burgerActive }">
+      <div class="navbar-end" v-if="userMenu">
+        <div v-if="user.email" class="navbar-item">
+          <a class="navbar-item" href="/drive">My Drive</a>
+          <a class="navbar-item" @click="logout">Sign Out</a>
+          <div class="navbar-item is-hidden-touch">
+            <img class="circle" :src="user.avatar" :title="user.name" />
+          </div>
+        </div>
+        <a v-else class="navbar-item" href="/auth">Sign In</a>
       </div>
     </div>
   </nav>
 </template>
 
 <style scoped>
+.circle {
+  border-radius: 50%;
+}
 </style>
 
 <script>
-import NavBrand from "@/components/NavBrand.vue";
-import NavUser from "@/components/NavUser.vue";
+import api from "@/common/api";
 
 export default {
   name: "IndexPage",
-  props: ["user"],
-  components: {
-    NavBrand,
-    NavUser,
+  props: ["userMenu"],
+  data() {
+    return {
+      burgerActive: false,
+    };
+  },
+  methods: {
+    logout() {
+      api
+        .logout()
+        .then(() => {
+          api.index();
+        })
+        .catch((ex) => {
+          console.log("catch", ex);
+        });
+    },
+  },
+  computed: {
+    user() {
+      return this.$store.getters["user/current"];
+    },
   },
 };
 </script>

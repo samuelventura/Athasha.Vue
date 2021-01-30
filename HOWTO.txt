@@ -1,0 +1,139 @@
+* https://bulma.io/
+* https://codepen.io/wikiki/pen/OjdNKM
+
+* https://vuejs.org/
+* https://vuex.vuejs.org/
+* https://cli.vuejs.org/
+* https://codesandbox.io/s/o29j95wx9
+
+# WINDOWS
+$ node --version
+v14.15.3
+$ npm --version
+6.14.9
+
+npm i -g @vue/cli
+npm i -g @vue/cli-service-global
+
+$ vue --version
+@vue/cli 4.5.10
+
+mmkdir athasha
+cd athasha
+vue create .
+#vue2, babel, eslint
+npm run serve
+#http://localhost:8081/
+vue ui
+#http://localhost:8001/
+
+https://github.com/vuejs/vetur
+vue add vuex
+
+# Research
+
+* Node reference server to stablish api requirements
+* Terms and privacy templates
+* Page load time optimization (dynamically load third party js)
+* Other SSO providers: github, ms, nuget, fb, ...
+* Ensure CORS is enabled to call third party APIs
+* Bulma and fontawesome with npm+import for webpack to bundle them
+* Multi page
+* Store nesting
+* Auto complete 
+* Form validation
+* Multi child in root template
+* Context instead of vuex store
+* What diffent click/tap iteration a touch device requires
+* Versionar a nivel project como forma de undo para evitar undos de granularidad tan pequena
+* Dynamic components instead of v-if for tabs
+* Dynamic computed properties for observable indexed models
+* Min/max in number input no working... 0 is possible in points editor
+* v-model support nested accessor obj.pro and indexed accesor obj[i] but dirty interception not possible
+* use vw and vh instead of vue-resize-directive in runtime
+* FIXME dragging on single and dual columns show shadow of adjacent elements 
+    - caused by resize directive
+    - not happening on firefox
+* event.dataTransfer.clearData(); can only be called on drag start. 
+    - FF excepts otherwise, chrome ignores it
+* los estilos <svg:style type="text/css"> parecen ser globales
+    - el lint se queja al meterlos solo con <style>
+* Como evitar declarar un DO dos veces? 
+    - una para escribir y una para visualizar status.
+* Implement computed points and actions and add their widgets
+* package-lock.json modified when switching between OSs
+    - Different node, npm, @vue/cli ?
+* fontawesome plugin not being used with finer icon selection
+    - extra dev package added to for import all as with cdn
+
+https://learnvue.co/2020/01/how-to-add-drag-and-drop-to-your-vuejs-project/
+
+# NEXT STEPS
+
+[ ] Smaller id with Math.random
+[ ] Item wrapping to avoid dirtying with $id
+
+* Fix nav burger not droping down
+* Implement collapsible multi point group
+* Implement default table point group
+* Implement d&d point group reorder
+* Implement a trash basket to drag items to to remove them
+    - pass delete function thru d&d ?
+* Implement burger click. Hoverable burger? 
+* Multipage vue to implement project browser
+* Implement table like input of single modbus io for sparce ios
+* Implement a delete mode to delete anything clicked upon (danger?)
+* Flatten then add item menu all over the navbar to click directly 
+    (add icons palette)
+* Implement tree like items menu to go directly to subintems editor 
+    (like channel and point groups in modbus device)
+    Or collapsible point groups
+* Implement item tree menu dock left
+* Implement add/remove point group
+* Implement remove project item
+* Implement in place modbus device run
+* Item type custom icon
+* Make filter project items local
+* Add filter by point type with prefix di: do: ...
+* Add point type icons at UI for di, do, ...
+
+# COMPLETED
+
+* Empty number input sends invalid data
+    - Fixed with explicit min/max checks
+    - Html min/max must stay to avoid up/down control value flicker
+* Make point names observable for dirty flag
+    - Added point name editor component
+
+# QUESTIONABLE
+
+* Return to vuex for finer grained components (Project Items Menu, etc..)???
+
+https://cli.vuejs.org/config/#pages
+https://philipwalton.github.io/solved-by-flexbox/
+https://www.sketchingwithcss.com/samplechapter/cheatsheet.html#column
+https://css-tricks.com/snippets/css/complete-guide-grid/
+https://medium.com/front-end-weekly/how-to-use-fon-awesome-5-on-vuejs-project-ff0f28310821
+
+# from dev tools repl
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.commit
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.dispatch
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.data
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.data.name
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.data.items
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.commit('data/setName', {name: "Name1"})
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.dispatch('data/setName', {name: "Name2"})
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.view.selected
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.state.view.filter
+# module getters collapse to root store
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.getters["data/itemByIndex"]
+__VUE_DEVTOOLS_GLOBAL_HOOK__.store.getters["data/itemByIndex"](0)
+# mutations
+(state, args)
+# actions
+(context = { commit, state, dispatch, getters, rootGetters }, args)
+# getters
+(state) => {}
+(state, getters) => {}
+(state, getters, rootState) => {}
+(state, getters, rootState, rootGetters) => {}

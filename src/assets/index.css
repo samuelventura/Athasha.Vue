@@ -1,0 +1,9 @@
+#clear-filter {
+    pointer-events: initial;
+    cursor: pointer;
+    color: #dbdbdb;
+}
+
+#clear-filter.is-active {
+    color: #4a4a4a;
+}

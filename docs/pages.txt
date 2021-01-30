@@ -1,0 +1,15 @@
+[Index]
+- Inspiration from github.com
+- Should be available for logged in users as well
+- Place to lookup for public items
+- Realtime stats and activity
+- Along with [Policy] it is the only page accessible without login
+
+[Policy]
+- Implicit agreement notice on index footer
+- Implicit agreement notice on [Auth] page
+
+[Auth]
+- Should receive from server a text to display stating the reason for authentication
+- Should post to server and be redirected to referer
+- Server should set cookie and pass back confirmed user info to target page

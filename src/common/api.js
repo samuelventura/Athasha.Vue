@@ -6,6 +6,7 @@ const loginGoogle = function () {
     const user = window.gapi.auth2.getAuthInstance().currentUser.get();
     window.setTimeout(() => {
       backend.setUser({
+        valid: true,
         email: user.getBasicProfile().getEmail(),
         name: user.getBasicProfile().getName(),
         avatar: user.getBasicProfile().getImageUrl(),

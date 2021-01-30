@@ -6,15 +6,20 @@
       </a>
       <div
         v-if="userMenu"
-        class="navbar-burger navbar-item is-hidden-desktop"
+        class="navbar-burger"
         @click="burgerActive = !burgerActive"
       >
-        <img class="circle" :src="user.avatar" :title="user.name" />
+        <div v-if="user.valid" class="navbar-item is-hidden-desktop">
+          <img class="circle" :src="user.avatar" :title="user.name" />
+        </div>
+        <span v-if="!user.valid" aria-hidden="true"></span>
+        <span v-if="!user.valid" aria-hidden="true"></span>
+        <span v-if="!user.valid" aria-hidden="true"></span>
       </div>
     </div>
     <div class="navbar-menu" :class="{ 'is-active': burgerActive }">
       <div class="navbar-end" v-if="userMenu">
-        <div v-if="user.email" class="navbar-item">
+        <div v-if="user.valid" class="navbar-item">
           <a class="navbar-item" href="/drive">My Drive</a>
           <a class="navbar-item" @click="logout">Sign Out</a>
           <div class="navbar-item is-hidden-touch">

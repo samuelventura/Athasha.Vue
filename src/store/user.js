@@ -1,5 +1,6 @@
 const state = () => ({
   current: {
+    valid: false,
     email: "", //user email
     name: "", //user full name
     avatar: "", //url to avatar image
@@ -7,10 +8,11 @@ const state = () => ({
 });
 
 const mutations = {
-  setCurrent(state, { email, name, avatar }) {
+  setCurrent(state, { valid, email, name, avatar }) {
     state.current.name = name || "";
     state.current.email = email || "";
     state.current.avatar = avatar || "";
+    state.current.valid = valid || false;
   }
 };
 

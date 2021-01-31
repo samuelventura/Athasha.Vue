@@ -1,6 +1,5 @@
 <template>
   <nav class="panel">
-    <div class="panel-heading">Projects</div>
     <div class="panel-block">
       <!-- Shouldn't be lazy -->
       <p class="control has-icons-left has-icons-right">

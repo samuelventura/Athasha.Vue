@@ -2,6 +2,7 @@ import Vue from "vue"
 import Vuex from "vuex"
 import storage from "@/common/storage"
 import tools from "@/common/tools"
+import user from "@/store/user"
 
 const newId = (function () {
   return function (count) {
@@ -62,5 +63,6 @@ export default new Vuex.Store({
     },
   },
   modules: {
+    user,
   }
 })

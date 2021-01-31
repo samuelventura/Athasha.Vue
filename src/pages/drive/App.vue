@@ -1,14 +1,26 @@
 <template>
-  <ProjectBrowser />
+  <DrivePage />
 </template>
 
 <script>
-import ProjectBrowser from "./vues/ProjectBrowser.vue";
+import api from "@/common/api";
+import DrivePage from "./vues/DrivePage.vue";
 
 export default {
   name: "App",
   components: {
-    ProjectBrowser,
+    DrivePage,
+  },
+  mounted() {
+    const that = this;
+    api
+      .fetchInitialData()
+      .then(({ user }) => {
+        that.$store.commit("user/setCurrent", user);
+      })
+      .catch((ex) => {
+        console.log("catch", ex);
+      });
   },
 };
 </script>

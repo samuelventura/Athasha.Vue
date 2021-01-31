@@ -11,21 +11,21 @@ module.exports = {
       entry: 'src/pages/auth/index.js',
       template: 'public/index.html',
       filename: 'auth.html',
-      title: 'Authetication - Athasha Automation',
+      title: 'Authentication - Athasha Automation',
       chunks: ['chunk-vendors', 'chunk-common', 'auth']
     },
     drive: {
       entry: 'src/pages/drive/index.js',
       template: 'public/index.html',
       filename: 'drive.html',
-      title: 'My Projects - Athasha Drive',
+      title: 'My Drive - Athasha Automation',
       chunks: ['chunk-vendors', 'chunk-common', 'drive']
     },
     project: {
       entry: 'src/pages/project/index.js',
       template: 'public/index.html',
       filename: 'project.html',
-      title: '<Project Name> - Athasha Project',
+      title: '<Project Name> - Athasha Automation',
       chunks: ['chunk-vendors', 'chunk-common', 'project']
     },
     policy: {

@@ -7,6 +7,13 @@ module.exports = {
       title: 'Home - Athasha Automation',
       chunks: ['chunk-vendors', 'chunk-common', 'index']
     },
+    policy: {
+      entry: 'src/pages/policy/index.js',
+      template: 'public/index.html',
+      filename: 'policy.html',
+      title: 'Policy - Athasha Automation',
+      chunks: ['chunk-vendors', 'chunk-common', 'policy']
+    },
     auth: {
       entry: 'src/pages/auth/index.js',
       template: 'public/index.html',
@@ -27,13 +34,6 @@ module.exports = {
       filename: 'project.html',
       title: '<Project Name> - Athasha Automation',
       chunks: ['chunk-vendors', 'chunk-common', 'project']
-    },
-    policy: {
-      entry: 'src/pages/policy/index.js',
-      template: 'public/index.html',
-      filename: 'policy.html',
-      title: 'Policy - Athasha Automation',
-      chunks: ['chunk-vendors', 'chunk-common', 'policy']
     },
     tryout: {
       entry: 'src/pages/tryout/index.js',

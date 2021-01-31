@@ -42,7 +42,7 @@ export default {
           .finally(() => {
             window.gapi.auth2.getAuthInstance().disconnect();
             window.gapi.auth2.getAuthInstance().signOut();
-            api.referrer();
+            api.redirectToReferrer();
           });
       }
     },

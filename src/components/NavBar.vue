@@ -54,7 +54,7 @@ export default {
       api
         .logout()
         .then(() => {
-          api.index();
+          api.redirectToIndex();
         })
         .catch((ex) => {
           console.log("catch", ex);

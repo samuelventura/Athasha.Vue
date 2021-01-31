@@ -14,7 +14,7 @@ export default {
   mounted() {
     const that = this;
     api
-      .initial()
+      .fetchInitialData()
       .then(({ user }) => {
         that.$store.commit("user/setCurrent", user);
       })

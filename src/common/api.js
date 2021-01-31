@@ -31,7 +31,7 @@ const logout = function () {
 }
 
 //FIXME should receive a page argument
-const initial = function () {
+const fetchInitialData = function () {
   return new Promise((resolve) => {
     window.setTimeout(() => {
       resolve({ user: backend.getUser() });
@@ -39,25 +39,35 @@ const initial = function () {
   });
 }
 
-const referrer = function () {
+const redirectToReferrer = function () {
   if (!document.referrer) window.location.href = "/";
   else if (document.referrer == window.location.href) window.location.href = "/";
   else window.location.href = document.referrer;
 }
 
-const index = function () {
+const redirectToIndex = function () {
   window.location.href = "/";
 }
 
-const auth = function () {
+const redirectToAuth = function () {
   window.location.href = "/auth";
 }
 
+const acceptedCookies = function () {
+  return JSON.parse(localStorage.getItem("athasha/fe/cookies") || "false");
+}
+
+const acceptCookies = function () {
+  localStorage.setItem("athasha/fe/cookies", "true");
+}
+
 export default {
-  auth,
   login,
   logout,
-  referrer,
-  index,
-  initial,
+  redirectToIndex,
+  redirectToReferrer,
+  redirectToAuth,
+  fetchInitialData,
+  acceptedCookies,
+  acceptCookies,
 }

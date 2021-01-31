@@ -1,8 +1,9 @@
 <template>
   <div class="container">
     <NavBar />
-    <div class="notification is-warning">
-      By using this site you agree to all of our <a href="/policy">policies</a>.
+    <div class="notification has-text-centered is-warning">
+      By using this site you agree to all of our
+      <a href="/policy">policies</a>.
     </div>
     <AuthList />
   </div>

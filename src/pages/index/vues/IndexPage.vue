@@ -1,7 +1,18 @@
 <template>
   <div class="container">
     <NavBar userMenu="true" />
-    <NavFooter />
+    <div
+      v-if="!acceptedCookies"
+      class="notification has-text-centered is-warning"
+    >
+      <p>
+        By using this site you agree to all of our
+        <a href="/policy">policies</a> which include collecting
+        <a href="/policy#cookies">cookies</a>.
+      </p>
+      <br />
+      <a class="button" @click="acceptCookies">Accept & Hide Notice</a>
+    </div>
   </div>
 </template>
 
@@ -9,14 +20,29 @@
 </style>
 
 <script>
+import api from "@/common/api";
 import NavBar from "@/components/NavBar.vue";
-import NavFooter from "@/components/NavFooter.vue";
 
 export default {
   name: "IndexPage",
   components: {
     NavBar,
-    NavFooter,
+  },
+  data() {
+    return {
+      cookiesClick: false,
+    };
+  },
+  methods: {
+    acceptCookies() {
+      api.acceptCookies();
+      this.cookiesClick = true;
+    },
+  },
+  computed: {
+    acceptedCookies() {
+      return api.acceptedCookies() || this.cookiesClick;
+    },
   },
 };
 </script>
